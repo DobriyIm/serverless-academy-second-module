@@ -1,11 +1,11 @@
-import exress from 'express';
+import express from 'express';
 
 import authRouter from './routes/auth-router.js';
 import userRouter from './routes/user-router.js';
 
-const app = exress();
+const app = express();
 
-app.use(exress.json());
+app.use(express.json());
 
 app.use('/auth', authRouter);
 app.use('/me', userRouter);

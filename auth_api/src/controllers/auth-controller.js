@@ -1,8 +1,13 @@
 import service from '../services/auth-service.js';
+import { emailValidator, paswwordValidator } from '../validator.js';
 
 const signup = async (req, res) => {
 	try {
 		const userData = req.body;
+
+		emailValidator(userData.email);
+
+		paswwordValidator(userData.password);
 
 		const serviceResult = await service.signup(userData);
 
